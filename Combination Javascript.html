@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<title>Factorial Combination Calculator</title>
+<head>Factorial</head>
+<body>
+  <h2>Factorial XY Calculator</h2>
+  <label>Enter X:</label>
+  <input type="number" id="x">
+  <label>Enter Y:</label>
+  <input type="number" id="y">
+  <button onclick="calculateFactorialXY()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    // Function to calculate factorial
+    function factorial(n) {
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    // Function to calculate combination
+    function combination(n, r) {
+        return factorial(n) / (factorial(r) * factorial(n - r));
+    }
+
+    // Main function to determine the result based on conditions
+    function calculateFactorialXY() {
+        let x = parseInt(document.getElementById("x").value);
+        let y = parseInt(document.getElementById("y").value);
+        let result;
+
+        if (y > x) {
+            result = combination(y, x); // Y C X
+        } else if (x > y) {
+            result = combination(x, y); // X C Y
+        } else {
+            result = combination(x + 1, y); // (X+1) C Y
+        }
+
+        document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
+</body>
+</html>

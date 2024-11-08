@@ -1,0 +1,19 @@
+<DOCTYPE html>
+    <head>
+       
+        <title>Last Two Digits Finder</title>
+    </head>
+<body>
+<input id="matricNumber" placeholder="Enter Matric Number">
+<button onclick="showLastTwoDigits()">Get Last Two Digits</button>
+<p id="result"></p>
+
+<script>
+    function showLastTwoDigits() {
+        let matricNumber = document.getElementById("matricNumber").value;
+        document.getElementById("result").innerText = matricNumber.slice(-2);
+
+    }
+</script>
+</body>
+</html>
