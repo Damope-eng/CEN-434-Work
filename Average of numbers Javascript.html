@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Average Calculation
+        </title>
+    </head>
+    <body>
+        <h1>Average of Array</h1>
+
+        <script>
+            const A ={1,2,3,4,5,6,7,8,9,10};
+            let sum = 0;
+
+            for(let i = 0; i < A.length; i++) {
+                sum += A[i];
+            }
+            let avg = sum / A.length;
+            document.getElementById("result").textContent = "Average: " + avg;
+        </script>
+    </body>
+</html>
